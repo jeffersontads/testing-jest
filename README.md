@@ -6,30 +6,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `npm run test:watch` to execute the unit tests (JEST)
 
-## Running end-to-end tests
+# Angular testing com JEST
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-
-<h1> Configurando JEST no Projeto Angular</h1>
-# Angular testing con JEST
-
-1. Remover cualquier referencia de Jasmine / Karma en el package.json
+1. Remover qualquer referencia de Jasmine / Karma no arquivo package.json
 ```
 npm remove <karma karma-chrome-launcher...>
 ```
@@ -39,12 +22,12 @@ npm remove <karma karma-chrome-launcher...>
 npm install --save-dev jest jest-preset-angular @types/jest
 ```
 
-3. Crear el ```setup-jest.ts``` en la carpeta root del proyecto y el contenido es el siguiente
+3. Crear o ```setup-jest.ts``` na pasta root do projeto com o seguinte conteúdo
 ```setup-jest.ts
 import 'jest-preset-angular/setup-jest';
 ```
 
-4. Agregar en el package.json, la configuración de Jest
+4. Adicionar em package.json, a configuração do Jest
 ```package.json
 "jest": {
     "preset": "jest-preset-angular",
@@ -56,17 +39,17 @@ import 'jest-preset-angular/setup-jest';
 ```
 
 
-4. Configurar JEST en tsconfig.json y tsconfig.spec.json
+4. Configurar JEST no arquivo tsconfig.json e tsconfig.spec.json
 ```tsconfig.json
 "types": [
   "jest"
 ]
 ```
 
-5. Configurar los comandos para ejecutar las pruebas en el package.json
+5. Configurar os comandos para executar os testes, comando serão configurados no arquivo package.json
 ```package.json
 "test": "jest",
 "test:watch": "jest --watchAll",
 ```
 
-6. Remover karma.config.js y el archivo test.ts
+6. Remover karma.config.js e archivo test.ts
